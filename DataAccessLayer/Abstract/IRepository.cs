@@ -11,6 +11,7 @@ namespace DataAccessLayer.Abstract
     {
         //CRAD işlemleri
         List<T> List();
+        T GetById(Expression<Func<T, bool>>filter);
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);

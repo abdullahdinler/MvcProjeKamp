@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         public int Id { get; set; }
         [StringLength(1000)]
         public string Txt { get; set; }
+        public bool Status { get; set; }
         public DateTime DateTimee { get; set; }
 
         //Burada Content sınıfı ile Heading sınıfı arasında bir ilişki kurduk.

@@ -3,30 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete.Repositories;
 using EntityLayer.Concrete;
 
 namespace BusinessLayer.Concrete
 {
-    public class CategoryManager
+    public class CategoryManager : ICategoryService
     {
-        private GenericRepository<Category> repo = new GenericRepository<Category>();
+        ICategoryDal _categoryDal;
 
-        public List<Category> GetALL()
+        public CategoryManager(ICategoryDal categoryDal)
         {
-            return repo.List();
+            _categoryDal = categoryDal;
         }
 
-        public void Add(Category entity)
+        public List<Category> GetList()
         {
-            if (entity.Name == "" || entity.Description == "" || entity.Name.Length <= 3 ||entity.Name.Length >= 10)
-            {
-                //Hata mesajı gönder
-            }
-            else
-            {
-                repo.Add(entity);
-            }
+            return _categoryDal.List();
+        }
+
+        public void CatagoryAdd(Category entity)
+        {
+            _categoryDal.Add(entity);
+        }
+
+        public Category GetById(int id)
+        {
+            return _categoryDal.GetById(x=>x.Id==id);
+        }
+
+        public void Delete(Category entity)
+        {
+            _categoryDal.Delete(entity);
+        }
+
+        public void Update(Category entity)
+        {
+            _categoryDal.Update(entity);
         }
     }
 }

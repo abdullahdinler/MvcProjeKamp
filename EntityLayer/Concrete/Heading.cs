@@ -14,7 +14,7 @@ namespace EntityLayer.Concrete
         [StringLength(100)]
         public string Name { get; set; }
         public DateTime DateTimee { get; set; }
-
+        public bool Status { get; set; }
 
         //Burada Writer sınıfı ile Heading sınıfı arasında bir ilişki kurduk.
         public int WriterId { get; set; }

@@ -56,13 +56,45 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfCategoryDal.cs" />
+    <Compile Include="EntityFramework\EfContactDal.cs" />
+    <Compile Include="EntityFramework\EfContentDal.cs" />
+    <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202212270957336_mig1.cs" />
     <Compile Include="Migrations\202212270957336_mig1.designer.cs">
       <DependentUpon>202212270957336_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212311102090_mig_writer_edit.cs" />
+    <Compile Include="Migrations\202212311102090_mig_writer_edit.designer.cs">
+      <DependentUpon>202212311102090_mig_writer_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301011320424_mig_writer_edit_satus.cs" />
+    <Compile Include="Migrations\202301011320424_mig_writer_edit_satus.designer.cs">
+      <DependentUpon>202301011320424_mig_writer_edit_satus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301021004431_mig_content_satatus_add.cs" />
+    <Compile Include="Migrations\202301021004431_mig_content_satatus_add.designer.cs">
+      <DependentUpon>202301021004431_mig_content_satatus_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301021013565_mig_heading_satatus_add.cs" />
+    <Compile Include="Migrations\202301021013565_mig_heading_satatus_add.designer.cs">
+      <DependentUpon>202301021013565_mig_heading_satatus_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301031101435_mig_contact_add_time.cs" />
+    <Compile Include="Migrations\202301031101435_mig_contact_add_time.designer.cs">
+      <DependentUpon>202301031101435_mig_contact_add_time.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301031119208_Add_Message_Class.cs" />
+    <Compile Include="Migrations\202301031119208_Add_Message_Class.designer.cs">
+      <DependentUpon>202301031119208_Add_Message_Class.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +112,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212270957336_mig1.resx">
       <DependentUpon>202212270957336_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212311102090_mig_writer_edit.resx">
+      <DependentUpon>202212311102090_mig_writer_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301011320424_mig_writer_edit_satus.resx">
+      <DependentUpon>202301011320424_mig_writer_edit_satus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301021004431_mig_content_satatus_add.resx">
+      <DependentUpon>202301021004431_mig_content_satatus_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301021013565_mig_heading_satatus_add.resx">
+      <DependentUpon>202301021013565_mig_heading_satatus_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301031101435_mig_contact_add_time.resx">
+      <DependentUpon>202301031101435_mig_contact_add_time.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301031119208_Add_Message_Class.resx">
+      <DependentUpon>202301031119208_Add_Message_Class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

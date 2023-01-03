@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer.Abstract;
@@ -19,14 +20,21 @@ namespace DataAccessLayer.Concrete.Repositories
         }
         public void Add(T entity)
         {
-            _objet.Add(entity);
+            var AddedEntity = context.Entry(entity);
+            AddedEntity.State = EntityState.Added;
             context.SaveChanges();
         }
 
         public void Delete(T entity)
         {
-            _objet.Remove(entity);
+            var deleted = context.Entry(entity);
+            deleted.State = EntityState.Deleted;
             context.SaveChanges();
+        }
+
+        public T GetById(Expression<Func<T, bool>> filter)
+        {
+            return _objet.SingleOrDefault(filter);
         }
 
         public List<T> List()
@@ -41,6 +49,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(T entity)
         {
+            var ModifiedEntity = context.Entry(entity);
+            ModifiedEntity.State = EntityState.Modified;
             context.SaveChanges();
         }
     }

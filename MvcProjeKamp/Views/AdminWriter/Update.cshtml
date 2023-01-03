@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 0px 50px 20px 20px" class="form-group">
+    <br />
+    <h4>Yazar güncelleme sayfası</h4>
+    @using (Html.BeginForm("Update", "AdminWriter", FormMethod.Post))
+    {
+        @Html.Label("Yazar Ad", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Name, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.Name,"",new{@class="text-danger"});
+        <br />
+        @Html.Label("Yazar Soyad", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.SurName, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.SurName, "", new { @class = "text-danger" });
+        <br />
+        @Html.Label("Yazar Hakkında", new { @class = "text-bold" });
+        @Html.TextAreaFor(w => w.About, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.About, "", new { @class = "text-danger" });
+        <br />
+        @Html.Label("Yazar Mail", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Mail, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.Mail, "", new { @class = "text-danger" });
+        <br />
+        @Html.Label("Şifre", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Password, new { @class = "form-control" });
+        <br />
+        @Html.Label("Yazar Resim", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Img, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.Img, "", new { @class = "text-danger" });
+        <br />
+        <button class="btn btn-info">Bilgileri Güncelle</button>
+    }
+</div>
