@@ -14,7 +14,8 @@ namespace MvcProjeKamp.Controllers
     public class AdminCategoryController : Controller
     {
         private CategoryManager _category = new CategoryManager(new EfCategoryDal());
-        // GET: AdminCategory
+       
+        [Authorize(Roles = "b")] // sadece b rolunw sahip admin bu bölüme erişebilir.
         public ActionResult Index()
         {
             var c = _category.GetList();

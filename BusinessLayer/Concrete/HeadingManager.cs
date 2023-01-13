@@ -40,6 +40,11 @@ namespace BusinessLayer.Concrete
             return h;
         }
 
+        public List<Heading> GetList(int id)
+        {
+            return _headingDal.List(x => x.WriterId == id);
+        }
+
         public void Update(Heading entity)
         {
             _headingDal.Update(entity);

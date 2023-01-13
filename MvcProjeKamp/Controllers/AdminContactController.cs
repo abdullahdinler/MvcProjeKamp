@@ -13,7 +13,7 @@ namespace MvcProjeKamp.Controllers
     {
         private ContactManager cm = new ContactManager(new EfContactDal());
         private MessageManager mm = new MessageManager(new EfMessageDal());
-
+        private DraftManager dm = new DraftManager(new EfDraftDal());
         private ContactValidator cv = new ContactValidator();
         // GET: AdminContact
         public ActionResult Index()
@@ -33,9 +33,11 @@ namespace MvcProjeKamp.Controllers
         {
             var mesageSend =  mm.GetListSendBox().Count();
 
+            var draftValueCount = dm.GetList().Count();
             var mesageinbOXd = mm.GetListInBox().Count();
             ViewBag.SendBox = mesageSend;
             ViewBag.InBox = mesageinbOXd;
+            ViewBag.Draft = draftValueCount;
             var c = cm.GetsList().Count;
             ViewBag.Iletisim = c;
             return PartialView();

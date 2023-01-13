@@ -1,0 +1,15 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddAdmin", "AdminLogin", FormMethod.Post))
+{
+    @Html.TextBoxFor(x => x.UserName)
+    @Html.TextBoxFor(x => x.Password)
+    @Html.TextBoxFor(x => x.Role)
+    <button>Ekel</button>
+
+}
+

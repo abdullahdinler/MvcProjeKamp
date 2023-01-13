@@ -8,7 +8,7 @@ using FluentValidation;
 
 namespace BusinessLayer.ValidationRules
 {
-    class AboutValidator:AbstractValidator<About>
+    public class AboutValidator:AbstractValidator<About>
     {
         public AboutValidator()
         {

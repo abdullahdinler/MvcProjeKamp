@@ -16,6 +16,5 @@ namespace BusinessLayer.Abstract
         void Add(Content entity);
         void Update(Content entity);
         void Delete(Content entity);
-
     }
 }

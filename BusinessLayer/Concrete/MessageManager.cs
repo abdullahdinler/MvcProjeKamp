@@ -38,17 +38,20 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetListInBox()
         {
-            return _messageDal.List(x=>x.ReceiverMail == "admin@admin.com");
+            return _messageDal.List();
         }
 
+      
         public List<Message> GetListSendBox()
         {
-            return _messageDal.List(x => x.SendMail == "admin@admin.com");
+            return _messageDal.List();
         }
 
+       
         public void Update(Message entity)
         {
             _messageDal.Update(entity);
         }
+        
     }
 }

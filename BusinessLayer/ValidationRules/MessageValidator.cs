@@ -13,10 +13,11 @@ namespace BusinessLayer.ValidationRules
         public MessageValidator()
         {
             RuleFor(x => x.SendMail).MaximumLength(50).WithMessage("Mail en fazla 50 karekter olabilir.");
+            RuleFor(x => x.ReceiverMail).NotEmpty().WithMessage("Mail alanı boş geçilemez.");
             //RuleFor(x => x.SendMail).EmailAddress().WithMessage("Mail en fazla 50 karekter olabilir.");
             RuleFor(x => x.ReceiverMail).MaximumLength(50).WithMessage("Mail en fazla 50 karekter olabilir.");
             RuleFor(x => x.Subject).MaximumLength(100).WithMessage("Başlık en fazla 100 karekter icerebilir.");
-            RuleFor(x => x.Subject).MinimumLength(30).WithMessage("Mesajnız en az 30 karekter olması lazım.");
+            RuleFor(x => x.MessageContent).MinimumLength(30).WithMessage("Mesajnız en az 30 karekter olması lazım.");
         }
     }
 }

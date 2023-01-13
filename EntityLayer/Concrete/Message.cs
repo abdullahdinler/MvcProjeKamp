@@ -19,5 +19,6 @@ namespace EntityLayer.Concrete
         public string Subject { get; set; }
         public string MessageContent { get; set; }
         public DateTime DateTimee { get; set; }
+        public bool Situation { get; set; }
     }
 }

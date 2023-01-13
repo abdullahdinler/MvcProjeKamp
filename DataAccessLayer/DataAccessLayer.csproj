@@ -52,9 +52,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
+    <Compile Include="Abstract\IDraftDal.cs" />
+    <Compile Include="Abstract\IGalleryFileDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
@@ -62,9 +65,12 @@
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
+    <Compile Include="EntityFramework\EfDraftDal.cs" />
+    <Compile Include="EntityFramework\EfGalleryFileDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
@@ -95,6 +101,22 @@
     <Compile Include="Migrations\202301031119208_Add_Message_Class.cs" />
     <Compile Include="Migrations\202301031119208_Add_Message_Class.designer.cs">
       <DependentUpon>202301031119208_Add_Message_Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301041001417_mig_add_class_draft.cs" />
+    <Compile Include="Migrations\202301041001417_mig_add_class_draft.designer.cs">
+      <DependentUpon>202301041001417_mig_add_class_draft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301041417287_mig_add_class_galleryFile.cs" />
+    <Compile Include="Migrations\202301041417287_mig_add_class_galleryFile.designer.cs">
+      <DependentUpon>202301041417287_mig_add_class_galleryFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301061122292_Add_Admin_Class.cs" />
+    <Compile Include="Migrations\202301061122292_Add_Admin_Class.designer.cs">
+      <DependentUpon>202301061122292_Add_Admin_Class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202301091106501_Edit_Message_Durum.cs" />
+    <Compile Include="Migrations\202301091106501_Edit_Message_Durum.designer.cs">
+      <DependentUpon>202301091106501_Edit_Message_Durum.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +152,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301031119208_Add_Message_Class.resx">
       <DependentUpon>202301031119208_Add_Message_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301041001417_mig_add_class_draft.resx">
+      <DependentUpon>202301041001417_mig_add_class_draft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301041417287_mig_add_class_galleryFile.resx">
+      <DependentUpon>202301041417287_mig_add_class_galleryFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301061122292_Add_Admin_Class.resx">
+      <DependentUpon>202301061122292_Add_Admin_Class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301091106501_Edit_Message_Durum.resx">
+      <DependentUpon>202301091106501_Edit_Message_Durum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

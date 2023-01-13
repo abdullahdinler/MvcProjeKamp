@@ -13,6 +13,8 @@
         @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.Name)
         <br />
+        @Html.HiddenFor(x => x.DateTimee, new { @class = "form-control disabled", @readonly = true })
+        @Html.HiddenFor(x => x.WriterId, new { @class = "form-control disabled", @readonly = true })
         @Html.Label("Kategori", new { @class = "text-bold" })
         @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Item, new { @class = "form-control" })
         <br />

@@ -47,6 +47,11 @@ namespace BusinessLayer.Concrete
             return c;
         }
 
+        public List<Content> GetListContent(int id)
+        {
+            var c = _content.List(x => x.WriterId == id);
+            return c;
+        }
         public void Update(Content entity)
         {
             _content.Update(entity);
