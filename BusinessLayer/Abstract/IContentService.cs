@@ -12,6 +12,7 @@ namespace BusinessLayer.Abstract
     {
         List<Content> GetList();
         List<Content> GetListById(int id);
+        List<Content> Search(string word);
         Content GetById(int id);
         void Add(Content entity);
         void Update(Content entity);

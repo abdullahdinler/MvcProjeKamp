@@ -5,8 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using PagedList;
 using PagedList.Mvc;
 
@@ -17,11 +19,40 @@ namespace MvcProjeKamp.Controllers
         private HeadingManager hm = new HeadingManager(new EfHeadingDal());
 
         private CategoryManager cm = new CategoryManager(new EfCategoryDal());
+
+        private WriterManager wm = new WriterManager(new EfWriterDal());
         // GET: WriterPanel
+        [HttpGet]
         public ActionResult WriterProfile()
         {
+            string mail = (string) Session["Mail"];
+            var writerId = wm.GetList().Where(x => x.Mail == mail).Select(y => y.Id).FirstOrDefault();
+            var result = wm.GetById(writerId);
+            return View(result);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer entity)
+        {
+
+            WriterValidator validator = new WriterValidator();
+            ValidationResult result = validator.Validate(entity);
+            if (result.IsValid)
+            {
+                wm.Update(entity);
+                return RedirectToAction("AllGetHeading","WriterPanel");
+
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
+
 
         public ActionResult GetHeading(string p)
         {

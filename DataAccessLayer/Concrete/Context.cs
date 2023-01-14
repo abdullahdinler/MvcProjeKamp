@@ -20,5 +20,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Draft> Drafts { get; set; }
         public DbSet<GalleryFile> GalleryFiles { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<GoogleChart> GoogleCharts { get; set; }
     }
 }

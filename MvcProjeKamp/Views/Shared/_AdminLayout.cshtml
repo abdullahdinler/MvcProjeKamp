@@ -55,7 +55,7 @@ to get the desired effect
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        
+
 
                         @if (User.IsInRole("b")) //Admin rolu sadece b olan kişinin gösterilecek.
                         {
@@ -76,11 +76,19 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                            <li class="nav-item has-treeview">
+                        <li class="nav-item has-treeview">
                             <a href="/AdminWriter/" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Yazarlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/AdminContent/GetAllContent/" class="nav-link">
+                                <i class="nav-icon fas fa-book-reader"></i>
+                                <p>
+                                    Yazılar
                                 </p>
                             </a>
                         </li>
@@ -94,7 +102,7 @@ to get the desired effect
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="/ChartGoogle/" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Grafik 1</p>
                                     </a>
@@ -129,14 +137,7 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Yazılar
-                                </p>
-                            </a>
-                        </li>
+
                         <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
@@ -158,12 +159,12 @@ to get the desired effect
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
                                     Hata Sayfaları
-                                    
+
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Home/Index2/" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Siteye Git

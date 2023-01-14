@@ -18,6 +18,7 @@ namespace MvcProjeKamp.Controllers
     {
         private AdminManager adm = new AdminManager(new EfAdminDal());
         private WriterManager wm = new WriterManager(new EfWriterDal());
+        private WriterLoginManager wlm = new WriterLoginManager(new EfWriterDal());
 
         // GET: Admin
         [HttpGet]
@@ -28,7 +29,6 @@ namespace MvcProjeKamp.Controllers
         [HttpPost]
         public ActionResult Index(Admin entity)
         {
-
             var result = adm.GetList().FirstOrDefault(x => x.UserName == entity.UserName && x.Password == entity.Password);
             if (result != null)
             {
@@ -51,12 +51,13 @@ namespace MvcProjeKamp.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer entity)
         {
-            var result = wm.GetList().FirstOrDefault(x => x.Mail == entity.Mail && x.Password == entity.Password);
+            //var result = wm.GetList().FirstOrDefault(x => x.Mail == entity.Mail && x.Password == entity.Password);
+            var result = wlm.GetWriter(entity.Mail, entity.Password);
             if (result != null)
             {
                 FormsAuthentication.SetAuthCookie(entity.Mail,false);
                 Session["Mail"] = entity.Mail;
-                return RedirectToAction("NewHeading", "WriterPanel");
+                return RedirectToAction("WriterProfile", "WriterPanel");
             }
             else
             {

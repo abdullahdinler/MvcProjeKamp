@@ -1,8 +1,37 @@
-﻿
+﻿@model EntityLayer.Concrete.Writer
 @{
     ViewBag.Title = "WriterProfile";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
-<h2>WriterProfile</h2>
+<div style="margin: 0px 50px 20px 20px" class="form-group">
+    @using (Html.BeginForm("WriterProfile", "WriterPanel", FormMethod.Post))
+    {
+        @Html.HiddenFor(x=>x.Id)
+        @Html.Label("Yazar Ad", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Name, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.Name);
+        <br />
+        @Html.Label("Yazar Soyad", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.SurName, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.SurName);
+        <br />
+        @Html.Label("Yazar Hakkında", new { @class = "text-bold" });
+        @Html.TextAreaFor(w => w.About, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.About);
+        <br />
+        @Html.Label("Yazar Mail", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Mail, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.Mail);
+        <br />
+        @Html.Label("Şifre", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Password, new { @class = "form-control" });
+        <br />
+        @Html.Label("Yazar Resim", new { @class = "text-bold" });
+        @Html.TextBoxFor(w => w.Img, new { @class = "form-control" });
+        @Html.ValidationMessageFor(w => w.Img);
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    }
+</div>
 

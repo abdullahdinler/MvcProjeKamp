@@ -52,6 +52,12 @@ namespace BusinessLayer.Concrete
             var c = _content.List(x => x.WriterId == id);
             return c;
         }
+
+        public List<Content> Search(string word)
+        {
+            return _content.List(x => x.Txt.Contains(word));
+        }
+
         public void Update(Content entity)
         {
             _content.Update(entity);

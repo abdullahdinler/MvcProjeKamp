@@ -27,5 +27,11 @@ namespace MvcProjeKamp.Controllers
 
             return View();
         }
+
+        [AllowAnonymous]
+        public ActionResult Index2()
+        {
+            return View();
+        }
     }
 }

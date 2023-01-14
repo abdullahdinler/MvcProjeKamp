@@ -15,12 +15,12 @@ namespace MvcProjeKamp.Controllers
 
         private ContentManager cm = new ContentManager(new EfContentDal());
         // GET: Default
-        public PartialViewResult Index(int id)
+        public PartialViewResult Index(int? id)
         {
-            id = 0;
-            if (id != 0 && id != null)
+            int _id = id ?? 0;
+            if (_id != 0 && _id != null)
             {
-                var result = cm.GetListById(id);
+                var result = cm.GetListById(_id);
                 return PartialView(result);
             }
             else
@@ -36,6 +36,6 @@ namespace MvcProjeKamp.Controllers
             return View(result);
         }
 
-        
+
     }
 }

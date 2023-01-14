@@ -24,6 +24,12 @@ namespace MvcProjeKamp.Controllers
             var h = hm.GetList();
             return View(h);
         }
+
+        public ActionResult Rapor()
+        {
+            var h = hm.GetList();
+            return View(h);
+        }
         [HttpGet]
         public ActionResult Add()
         {

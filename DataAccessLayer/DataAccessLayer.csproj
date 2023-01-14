@@ -58,6 +58,7 @@
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IDraftDal.cs" />
     <Compile Include="Abstract\IGalleryFileDal.cs" />
+    <Compile Include="Abstract\IGoogleChartDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfDraftDal.cs" />
     <Compile Include="EntityFramework\EfGalleryFileDal.cs" />
+    <Compile Include="EntityFramework\EfGoogleChartDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
@@ -118,6 +120,10 @@
     <Compile Include="Migrations\202301091106501_Edit_Message_Durum.designer.cs">
       <DependentUpon>202301091106501_Edit_Message_Durum.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301141300410_Chart_add.cs" />
+    <Compile Include="Migrations\202301141300410_Chart_add.designer.cs">
+      <DependentUpon>202301141300410_Chart_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301091106501_Edit_Message_Durum.resx">
       <DependentUpon>202301091106501_Edit_Message_Durum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301141300410_Chart_add.resx">
+      <DependentUpon>202301141300410_Chart_add.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
