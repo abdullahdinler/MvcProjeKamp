@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="margin: 0px 50% 20px 20px" class="form-group">
+    <br />
+    <h3>Yeni Kategori</h3>
+    @using (Html.BeginForm("Edit", "AdminAuthorization", FormMethod.Post))
+    {
+        @Html.Label("Kullanıcı Adı", new { @class = "text-bold" })
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br />
+        @Html.Label("Şifre", new { @class = "text-bold" })
+        @Html.TextAreaFor(x => x.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Password)
+        <br />
+        @Html.Label("Rolü Seçiniz", new { @class = "text-bold" })
+        @Html.TextBoxFor(x => x.Role, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Role)
+        <br />
+        @Html.Label("Durum", new { @class = "text-bold" })
+        @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Günçelle</button>
+    }
+</div>
+

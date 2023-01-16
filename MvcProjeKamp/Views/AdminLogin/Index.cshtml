@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script src="~/Scripts/jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="/AdminLTE-3.0.4/login-form-19/css/style.css">
 
 </head>
@@ -40,7 +41,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" class="btn form-control btn-primary rounded px-3">Giriş Yap</button>
+                                <button type="submit" onclick="return submitForm()" class="btn form-control btn-primary rounded px-3">Giriş Yap</button>
                             </div>
                         }
 
@@ -50,12 +51,48 @@
         </div>
     </section>
 
+
+
+
     <script src="/AdminLTE-3.0.4/login-form-19/js/jquery.min.js"></script>
     <script src="/AdminLTE-3.0.4/login-form-19/js/popper.js"></script>
     <script src="/AdminLTE-3.0.4/login-form-19/js/bootstrap.min.js"></script>
     <script src="/AdminLTE-3.0.4/login-form-19/js/main.js"></script>
 
+
+
+
+
+    @*<script type="text/javascript">
+        var value = "@((string)ViewBag.msg)"
+        if (value == "true") {
+            swal("Hoş Geldin", "Giriş başarılı bir şekilde gerçekleşti!", "success");
+        }
+        if (value == "false") {
+            swal("Ooopss", "Giriş başarısız kullanıcı adı veya şifre hatalı", "error");
+            }
+        </script>*@
+
+
+
 </body>
 </html>
 
-
+<script>
+   function submitForm() {
+        $.ajax({
+            type: "POST",
+            url: "@Url.Action("Index", "AdminLogin")",
+            data: { UserName: $("#UserName").val(), Password: $("#Password").val() },
+            dataType: "json",
+            success: function (response) {
+                if (response.success) {
+                    window.location.href = "@Url.Action("Index", "AdminCategory")";
+                }
+                else {
+                    Swal.fire("Hatalı Giriş", "Kullanıcı adı veya şifre yanlış", "error");
+                }
+                }
+});
+}
+</script>

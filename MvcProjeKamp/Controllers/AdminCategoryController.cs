@@ -48,11 +48,13 @@ namespace MvcProjeKamp.Controllers
             return View();
         }
 
-        public ActionResult Delete(int id)
+        [HttpPost]
+        public ActionResult Delete(int? id)
         {
-            var c = _category.GetById(id);
+            var _id = id ?? 0;
+            var c = _category.GetById(_id);
             _category.Delete(c);
-            return RedirectToAction("Delete");
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

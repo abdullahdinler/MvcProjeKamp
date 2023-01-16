@@ -134,6 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminAboutController.cs" />
+    <Compile Include="Controllers\AdminAuthorizationController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminContactController.cs" />
     <Compile Include="Controllers\AdminContentController.cs" />
@@ -2663,6 +2664,9 @@
     <Content Include="Views\AdminContent\GetAllContent.cshtml" />
     <Content Include="Views\ChartGoogle\Index.cshtml" />
     <Content Include="Views\AdminHeading\Rapor.cshtml" />
+    <Content Include="Views\AdminAuthorization\Index.cshtml" />
+    <Content Include="Views\AdminAuthorization\Add.cshtml" />
+    <Content Include="Views\AdminAuthorization\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

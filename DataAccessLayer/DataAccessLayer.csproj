@@ -124,6 +124,10 @@
     <Compile Include="Migrations\202301141300410_Chart_add.designer.cs">
       <DependentUpon>202301141300410_Chart_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202301161454044_edit_admin.cs" />
+    <Compile Include="Migrations\202301161454044_edit_admin.designer.cs">
+      <DependentUpon>202301161454044_edit_admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202301141300410_Chart_add.resx">
       <DependentUpon>202301141300410_Chart_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202301161454044_edit_admin.resx">
+      <DependentUpon>202301161454044_edit_admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

@@ -49,6 +49,7 @@ namespace BusinessLayer.Concrete
 
         public void Update(Admin entity)
         {
+            entity.Status = entity.Status ? false : true;
             _adminDal.Update(entity);
         }
     }

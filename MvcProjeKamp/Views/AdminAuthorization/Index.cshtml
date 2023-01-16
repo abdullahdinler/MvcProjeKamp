@@ -1,14 +1,9 @@
 ﻿@using EntityLayer.Concrete
-@model List<Category>
+@model List<Admin>
 @{
-    ViewBag.Title = "Anasayfa";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-
-
-
-
 
 
 <div style="margin: 0px 20px 20px 20px" class="form-group">
@@ -17,42 +12,43 @@
         <h3>Kategori Listesi</h3>
         <tr>
             <th>#</th>
-            <th>Kategori</th>
-            <th>Sil</th>
-            <th>Düzenle</th>
-            <th>Başlıklar</th>
+            <th>Kullanıcı Adı</th>
+            <th>Rol</th>
+            <th>Durum</th>
+            <th>Pasif Yap</th>
+            <th>Yetkiyi Düzenle</th>
 
         </tr>
         @foreach (var item in Model)
         {
-            <tr>
-                <th>@item.Id</th>
-                <td>@item.Name</td>
-                <td><a id="delet" class="btn  btn-info btn-sm" href="/AdminCategory/Update/@item.Id">Düzenle</a></td>
-                <td>
-                    <a href="@Url.Action("Delete", "AdminCategory", new { id = @item.Id })" id="delet" class="btn btn-danger btn-sm">Sil</a>
-                    @*<a class="btn btn-danger btn-sm" href="/AdminCategory/Delete/@item.Id">Sil</a>*@
-                </td>
-                <td><a class="btn btn-success btn-sm" href="#başliklar">Başlıklar</a></td>
-            </tr>
+    <tr>
+        <th>@item.Id</th>
+        <td>@item.UserName</td>
+        <td>@item.Role</td>
+        <td>@item.Status</td>
+        <td>
+            <a href="@Url.Action("Status", "AdminAuthorization", new { id = @item.Id })" id="status" class="btn btn-danger btn-sm">Pasif Bırak</a>
+        </td>
+        <td><a id="delet" class="btn  btn-info btn-sm" href="/AdminAuthorization/Edit/@item.Id">Yetkiyi Düzenle</a></td>
+    </tr>
         }
     </table>
-    <a class="btn btn-primary btn-sm " href="/AdminCategory/CategoryAdd">Yeni kategori</a>
+    <a class="btn btn-primary btn-sm " href="/AdminAuthorization/Add/">Yeni Admin Tanımla</a>
 </div>
 
 <script type="text/javascript">
 
-    $('#delet').on('click', function (e) {
+    $('#status').on('click', function (e) {
         e.preventDefault();
         var url = $(this).attr('href');
         Swal.fire({
-            title: 'Kategoriyi silmek istediğinizden emin misiniz?',
-            text: "Bu işlem geri alınamaz!",
+            title: '',
+            text: "Yetkisi değiştirilecek emin misiniz?",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
             cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Evet, sil!',
+            confirmButtonText: 'Evet',
             cancelButtonText: 'Vazgeç'
         }).then((result) => {
             if (result.value) {
@@ -63,8 +59,8 @@
                     success: function (result) {
                         if (result) {
                             Swal.fire(
-                                'Silindi!',
-                                'Ürün başarıyla silindi.',
+                                '',
+                                'Kullanıcının yetkisi başarılı bir şekilde değiştirildi.',
                                 'success'
                             ).then(() => {
                                 location.reload();
@@ -78,3 +74,4 @@
 
 
 </script>
+

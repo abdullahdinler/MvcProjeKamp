@@ -24,6 +24,7 @@ namespace MvcProjeKamp.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.msg = TempData["msg"] as string;
             return View();
         }
         [HttpPost]
@@ -32,13 +33,15 @@ namespace MvcProjeKamp.Controllers
             var result = adm.GetList().FirstOrDefault(x => x.UserName == entity.UserName && x.Password == entity.Password);
             if (result != null)
             {
+               
                 FormsAuthentication.SetAuthCookie(entity.UserName,false);
                 Session["UserName"] = entity.UserName;
                 return RedirectToAction("Index", "AdminCategory");
             }
             else
             {
-                return RedirectToAction("Index");
+                //TempData["msg"] = "false";
+                return Json(new { success = false });
             }
         }
 
@@ -69,7 +72,7 @@ namespace MvcProjeKamp.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("Headings", "Default");
+            return RedirectToAction("Index2", "Home");
         }
 
     }
