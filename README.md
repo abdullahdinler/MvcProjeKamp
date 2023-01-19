@@ -1,4 +1,5 @@
 # Mvc Proje Kampı
+Youtube üzerinde yayınlanan Mvc Proje Kampı 
 # <p>Eğitmen: Murat Yücedağ</p>
 # <p>Konu: Asp.Net MVC</p>
 # <p>Kamp Süresi: 24 Saat </p>
