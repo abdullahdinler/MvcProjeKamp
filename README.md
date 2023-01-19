@@ -4,7 +4,7 @@
 # <p>Kamp Süresi: 24 Saat </p>
 # <p>Yayınlandığı Plartform: Youtube </p>
 # <p>Kamp Adresi: <a href="https://www.youtube.com/playlist?list=PLKnjBHu2xXNNQJehhCg--CzQQMHXTsFAb"> Mvc Proje Kampı </a> </p>
-
+# <p>Proje Adresi: <a href="http://projelerim.somee.com/"> Tıkla </a> </p>
 # Kullanıcı Ara Yüzü
 
 ![Screenshot_1](https://user-images.githubusercontent.com/71527576/213199146-e6ad7c98-c0fa-48d3-b640-3b19eed60a26.png)
